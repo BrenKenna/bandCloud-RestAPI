@@ -73,6 +73,8 @@ public class AccountDisplay_Controller {
 		// Create user display
 		User user = dynamoUsers.getUser_ByID(cookieUid);
 		UserDisplay output = new UserDisplay(user);
+		user.setAccountType();
+		output.setAccountType(user.getAccountType());
 		return new ResponseEntity<>(output, HttpStatus.OK);
 	}
 	
